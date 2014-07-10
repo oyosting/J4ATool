@@ -18,7 +18,7 @@ public class MainActivity extends SlidingFragmentActivity {
 		setTitle("Choose Function");
 						
 		initSlidingMenu(savedInstanceState);
-		
+		getActionBar().show();
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 		getActionBar().setIcon(getResources().getDrawable(R.drawable.button_check_menu));
 	}
