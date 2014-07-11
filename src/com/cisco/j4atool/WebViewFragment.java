@@ -6,6 +6,8 @@
  */
 package com.cisco.j4atool;
 
+import com.umeng.analytics.MobclickAgent;
+
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
@@ -37,6 +39,20 @@ public class WebViewFragment extends Fragment
     private String mActionBarTitle;
 
     private WebView mWebView;
+
+    @Override
+    public void onPause()
+    {
+        super.onPause();
+        MobclickAgent.onPageEnd(WebViewFragment.class.toString());
+    }
+
+    @Override
+    public void onResume()
+    {
+        super.onResume();
+        MobclickAgent.onPageStart(WebViewFragment.class.toString());
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)

@@ -6,6 +6,7 @@ import android.view.MenuItem;
 
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.jeremyfeinstein.slidingmenu.lib.app.SlidingFragmentActivity;
+import com.umeng.analytics.MobclickAgent;
 
 public class MainActivity extends SlidingFragmentActivity
 {
@@ -22,6 +23,20 @@ public class MainActivity extends SlidingFragmentActivity
         initSlidingMenu(savedInstanceState);
         getActionBar().setDisplayHomeAsUpEnabled(true);
         getActionBar().setIcon(getResources().getDrawable(R.drawable.button_check_menu));
+    }
+
+    @Override
+    protected void onPause()
+    {
+        super.onPause();
+        MobclickAgent.onPause(this);
+    }
+
+    @Override
+    protected void onResume()
+    {
+        super.onResume();
+        MobclickAgent.onResume(this);
     }
 
     /**

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
+import com.umeng.analytics.MobclickAgent;
 
 import android.app.Activity;
 import android.content.Context;
@@ -205,6 +206,20 @@ public class MyMenuFragment extends ListFragment implements OnClickListener
             default:
                 break;
         }
+    }
+
+    @Override
+    public void onPause()
+    {
+        super.onPause();
+        MobclickAgent.onPageEnd(MyMenuFragment.class.toString());
+    }
+
+    @Override
+    public void onResume()
+    {
+        super.onResume();
+        MobclickAgent.onPageStart(MyMenuFragment.class.toString());
     }
 
     private class MyDataAdapter<MenuItem> extends ArrayAdapter<MenuItem>
