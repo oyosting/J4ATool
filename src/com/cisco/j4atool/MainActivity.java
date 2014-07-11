@@ -4,9 +4,9 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.MenuItem;
 
-import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.jeremyfeinstein.slidingmenu.lib.app.SlidingFragmentActivity;
 import com.umeng.analytics.MobclickAgent;
+import com.umeng.update.UmengUpdateAgent;
 
 public class MainActivity extends SlidingFragmentActivity
 {
@@ -23,6 +23,8 @@ public class MainActivity extends SlidingFragmentActivity
         initSlidingMenu(savedInstanceState);
         getActionBar().setDisplayHomeAsUpEnabled(true);
         getActionBar().setIcon(getResources().getDrawable(R.drawable.button_check_menu));
+        //detect updates
+        UmengUpdateAgent.update(this);
     }
 
     @Override
