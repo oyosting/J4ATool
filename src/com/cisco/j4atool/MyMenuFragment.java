@@ -3,6 +3,9 @@ package com.cisco.j4atool;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
+
+import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -22,6 +25,8 @@ public class MyMenuFragment extends ListFragment implements OnClickListener
     private TextView mFeedBackTextView;
 
     private TextView mAboutTextView;
+    
+    private MainActivity mActivity;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -30,6 +35,13 @@ public class MyMenuFragment extends ListFragment implements OnClickListener
         mappComponents(rootView);
         initListeners();
         return rootView;
+    }
+
+    @Override
+    public void onAttach(Activity activity)
+    {
+        super.onAttach(activity);
+        mActivity=(MainActivity)activity;
     }
 
     @Override
@@ -55,6 +67,8 @@ public class MyMenuFragment extends ListFragment implements OnClickListener
                 bundle.putString(WebViewFragment.WEB_ADDRESS, "http://www.yestops.com/xmpp.php");
                 bundle.putString(WebViewFragment.ACTION_BAR_TITLE, getResources().getString(R.string.menu_sendim));
                 newContent.setArguments(bundle);
+                //设置SlidingMenu的拖拽模式
+                mActivity.getSlidingMenu().setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
                 break;
             case 1:
                 newContent = new WebViewFragment();
@@ -62,6 +76,8 @@ public class MyMenuFragment extends ListFragment implements OnClickListener
                 bundle.putString(WebViewFragment.WEB_ADDRESS, "http://blog.yestops.com/?p=40");
                 bundle.putString(WebViewFragment.ACTION_BAR_TITLE, getResources().getString(R.string.menu_crosslaunch));
                 newContent.setArguments(bundle);
+                //设置SlidingMenu的拖拽模式
+                mActivity.getSlidingMenu().setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
                 break;
             case 2:
                 newContent = new WebViewFragment();
@@ -69,6 +85,8 @@ public class MyMenuFragment extends ListFragment implements OnClickListener
                 bundle.putString(WebViewFragment.WEB_ADDRESS, "http://10.140.80.88/p2p.php");
                 bundle.putString(WebViewFragment.ACTION_BAR_TITLE, getResources().getString(R.string.menu_p2p));
                 newContent.setArguments(bundle);
+                //设置SlidingMenu的拖拽模式
+                mActivity.getSlidingMenu().setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
                 break;
             case 3:
                 newContent = new WebViewFragment();
@@ -76,6 +94,8 @@ public class MyMenuFragment extends ListFragment implements OnClickListener
                 bundle.putString(WebViewFragment.WEB_ADDRESS, "http://cmbu.cisco.com/qd/build.html");
                 bundle.putString(WebViewFragment.ACTION_BAR_TITLE, getResources().getString(R.string.menu_jabberdownload));
                 newContent.setArguments(bundle);
+                //设置SlidingMenu的拖拽模式
+                mActivity.getSlidingMenu().setTouchModeAbove(SlidingMenu.TOUCHMODE_NONE);
                 break;
             case 4:
                 newContent = new WebViewFragment();
@@ -83,6 +103,8 @@ public class MyMenuFragment extends ListFragment implements OnClickListener
                 bundle.putString(WebViewFragment.WEB_ADDRESS, "http://cmbu.cisco.com/");
                 bundle.putString(WebViewFragment.ACTION_BAR_TITLE, getResources().getString(R.string.menu_iqa));
                 newContent.setArguments(bundle);
+                //设置SlidingMenu的拖拽模式
+                mActivity.getSlidingMenu().setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
                 break;
             case 5:
                 newContent = new WebViewFragment();
@@ -90,6 +112,8 @@ public class MyMenuFragment extends ListFragment implements OnClickListener
                 bundle.putString(WebViewFragment.WEB_ADDRESS, "http://www.sina.com.cn");
                 bundle.putString(WebViewFragment.ACTION_BAR_TITLE, getResources().getString(R.string.menu_prt));
                 newContent.setArguments(bundle);
+                //设置SlidingMenu的拖拽模式
+                mActivity.getSlidingMenu().setTouchModeAbove(SlidingMenu.TOUCHMODE_NONE);
                 break;
         }
         if (newContent != null)

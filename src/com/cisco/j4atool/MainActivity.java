@@ -51,7 +51,7 @@ public class MainActivity extends SlidingFragmentActivity
         getSupportFragmentManager().beginTransaction().replace(R.id.menu_frame, new MyMenuFragment()).commit();
 
         // 设置滑动菜单的属性值
-        getSlidingMenu().setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
+        //getSlidingMenu().setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
         getSlidingMenu().setShadowWidthRes(R.dimen.shadow_width);
         getSlidingMenu().setShadowDrawable(R.drawable.shadow);
         getSlidingMenu().setBehindOffsetRes(R.dimen.slidingmenu_offset);
