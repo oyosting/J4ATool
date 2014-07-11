@@ -7,6 +7,7 @@ import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.ListFragment;
@@ -193,6 +194,13 @@ public class MyMenuFragment extends ListFragment implements OnClickListener
                 Log.d("Cisco", "Switch to AboutFragment");
                 break;
             case R.id.button_feedback:
+                Intent emailIntent = new Intent(Intent.ACTION_SEND);
+                emailIntent.setType("message/rfc822");
+                emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{"xianpzha@cisco.com"});
+                emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Feedback For J4ATool");
+                emailIntent.putExtra(Intent.EXTRA_TEXT, "Enter your feedback below:\n");
+                emailIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(Intent.createChooser(emailIntent, "Send Email"));
                 break;
             default:
                 break;
