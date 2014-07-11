@@ -30,7 +30,6 @@ public class HomeActivity extends Activity
         super.onCreate(savedInstanceState);
         View view = View.inflate(this, R.layout.activity_first, null);
         setContentView(view);
-        getActionBar().hide();
         Animation animation = AnimationUtils.loadAnimation(this, R.anim.alpha);
         view.startAnimation(animation);
         animation.setAnimationListener(new AnimationListener() {
