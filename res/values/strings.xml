@@ -12,6 +12,7 @@
     <string name="menu_jabberdownload">Download Jabber</string>
     <string name="menu_iqa">IQA System</string>
     <string name="menu_prt">PRT System</string>
+    <string name="menu_worldcup">2014 World Cup</string>
 
     <!-- User Feedback -->
     <string name="feedback_submit">Submit</string>
