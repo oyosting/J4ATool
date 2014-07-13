@@ -11,7 +11,8 @@
         android:drawableLeft="@drawable/cisco_logo"
         android:paddingBottom="10dp"
         android:paddingLeft="5dp"
-        android:paddingTop="10dp" />
+        android:paddingTop="10dp"
+        android:textColorLink="@color/black" />
 
     <ListView
         android:id="@android:id/list"
