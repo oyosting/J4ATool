@@ -177,12 +177,11 @@ public class MyMenuFragment extends ListFragment implements OnClickListener
         prt.setIcon(getResources().getDrawable(R.drawable.menu_prt));
         prt.setName(getResources().getString(R.string.menu_prt));
         items.add(prt);
-        return items;
         // No.6
         MyMenuItem worldcup = new MyMenuItem();
-        prt.setIcon(getResources().getDrawable(R.drawable.menu_worldcup));
-        prt.setName(getResources().getString(R.string.menu_worldcup));
-        items.add(prt);
+        worldcup.setIcon(getResources().getDrawable(R.drawable.menu_worldcup));
+        worldcup.setName(getResources().getString(R.string.menu_worldcup));
+        items.add(worldcup);
         return items;
     }
 
