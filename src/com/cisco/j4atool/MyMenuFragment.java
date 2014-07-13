@@ -123,7 +123,7 @@ public class MyMenuFragment extends ListFragment implements OnClickListener
                 bundle.putString(WebViewFragment.WEB_ADDRESS, "http://worldcup.2014.163.com");
                 bundle.putString(WebViewFragment.ACTION_BAR_TITLE, getResources().getString(R.string.menu_worldcup));
                 newContent.setArguments(bundle);
-                mActivity.getSlidingMenu().setTouchModeAbove(SlidingMenu.TOUCHMODE_NONE);
+                mActivity.getSlidingMenu().setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
                 break;
         }
         if (newContent != null)
