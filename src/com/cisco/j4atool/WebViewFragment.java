@@ -41,7 +41,7 @@ public class WebViewFragment extends Fragment
 
     private WebView mWebView;
 
-    private TextView mErrorTextView;
+    private View mErrorView;
 
     @Override
     public void onPause()
@@ -62,7 +62,7 @@ public class WebViewFragment extends Fragment
     {
         View rootView = inflater.inflate(R.layout.fragment_webview, null);
         mWebView = (WebView) rootView.findViewById(R.id.web);
-        mErrorTextView = (TextView)rootView.findViewById(R.id.error_tip);
+        mErrorView = rootView.findViewById(R.id.error_layout);
         initWebView();
         MyWebViewClient webViewClient = new MyWebViewClient();
         mWebView.setWebViewClient(webViewClient);
@@ -104,7 +104,6 @@ public class WebViewFragment extends Fragment
         @Override
         public void onPageStarted(WebView view, String url, Bitmap favicon)
         {
-            // TODO Auto-generated method stub
             super.onPageStarted(view, url, favicon);
         }
 
@@ -112,7 +111,6 @@ public class WebViewFragment extends Fragment
         @Override
         public void onPageFinished(WebView view, String url)
         {
-            // TODO Auto-generated method stub
             super.onPageFinished(view, url);
         }
 
@@ -135,7 +133,7 @@ public class WebViewFragment extends Fragment
         {
             //cannot load the page, show error tip
             mWebView.setVisibility(View.GONE);
-            mErrorTextView.setVisibility(View.VISIBLE);
+            mErrorView.setVisibility(View.VISIBLE);
         }
         
     }
