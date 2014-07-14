@@ -29,7 +29,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.cisco.j4atool.MainActivity" >
+        <activity
+            android:name="com.cisco.j4atool.MainActivity" >
         </activity>
 
         <service

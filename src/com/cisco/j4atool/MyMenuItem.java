@@ -9,8 +9,14 @@ package com.cisco.j4atool;
 import android.graphics.drawable.Drawable;
 
 /**
- * @author kevin
- * @date 2014Äê7ÔÂ10ÈÕ
+ * 
+  *
+  * @ClassName: MyMenuItem
+  * @Description: 
+  *
+  * @Author: kevin
+  * @Date: 2014å¹´7æœˆ10æ—¥ 
+  *
  */
 public class MyMenuItem
 {

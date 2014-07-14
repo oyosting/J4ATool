@@ -19,7 +19,7 @@ import android.view.animation.AnimationUtils;
 
 /**
  * @author kevin
- * @date 2014Äê7ÔÂ10ÈÕ First activity shown to user when user open the app
+ * @date 2014å¹´7æœˆ10æ—¥ First activity shown to user when user open the app
  */
 public class HomeActivity extends Activity
 {
@@ -58,7 +58,7 @@ public class HomeActivity extends Activity
                 }, 500);
             }
         });
-        // ½ûÖ¹UmengÄ¬ÈÏµÄÒ³ÃæÍ³¼Æ·½Ê½--½«ActivityÀàÃû×÷ÎªÒ³ÃæÃû³Æ½øĞĞÍ³¼Æ
+     // ç¦æ­¢Umengé»˜è®¤çš„é¡µé¢ç»Ÿè®¡æ–¹å¼--å°†Activityç±»åä½œä¸ºé¡µé¢åç§°è¿›è¡Œç»Ÿè®¡
         MobclickAgent.openActivityDurationTrack(false);
         MobclickAgent.updateOnlineConfig(this);
         MobclickAgent.setDebugMode(true);
@@ -77,7 +77,7 @@ public class HomeActivity extends Activity
     {
         super.onPause();
         MobclickAgent.onPageEnd(HomeActivity.class.toString());
-        MobclickAgent.onResume(this);
+        MobclickAgent.onPause(this);
     }
 
     private void goHome()

@@ -22,6 +22,16 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+/**
+ * 
+  *
+  * @ClassName: MyMenuFragment
+  * @Description: 
+  *
+  * @Author: kevin
+  * @Date: 2014年7月10日
+  *
+ */
 public class MyMenuFragment extends ListFragment implements OnClickListener
 {
     private TextView mFeedBackTextView;
@@ -69,7 +79,7 @@ public class MyMenuFragment extends ListFragment implements OnClickListener
                 bundle.putString(WebViewFragment.WEB_ADDRESS, "http://www.yestops.com/xmpp.php");
                 bundle.putString(WebViewFragment.ACTION_BAR_TITLE, getResources().getString(R.string.menu_sendim));
                 newContent.setArguments(bundle);
-                //����SlidingMenu����������
+                //设置SlidingMenu拖拽模式
                 mActivity.getSlidingMenu().setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
                 break;
             case 1:
@@ -78,7 +88,7 @@ public class MyMenuFragment extends ListFragment implements OnClickListener
                 bundle.putString(WebViewFragment.WEB_ADDRESS, "http://www.yestops.com/crosslaunch.php");
                 bundle.putString(WebViewFragment.ACTION_BAR_TITLE, getResources().getString(R.string.menu_crosslaunch));
                 newContent.setArguments(bundle);
-                //����SlidingMenu����������
+                //设置SlidingMenu拖拽模式
                 mActivity.getSlidingMenu().setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
                 break;
             case 2:
@@ -87,7 +97,7 @@ public class MyMenuFragment extends ListFragment implements OnClickListener
                 bundle.putString(WebViewFragment.WEB_ADDRESS, "http://10.140.80.88/p2p.php");
                 bundle.putString(WebViewFragment.ACTION_BAR_TITLE, getResources().getString(R.string.menu_p2p));
                 newContent.setArguments(bundle);
-                //����SlidingMenu����������
+                //设置SlidingMenu拖拽模式
                 mActivity.getSlidingMenu().setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
                 break;
             case 3:
@@ -96,7 +106,7 @@ public class MyMenuFragment extends ListFragment implements OnClickListener
                 bundle.putString(WebViewFragment.WEB_ADDRESS, "http://cmbu.cisco.com/qd/build.html");
                 bundle.putString(WebViewFragment.ACTION_BAR_TITLE, getResources().getString(R.string.menu_jabberdownload));
                 newContent.setArguments(bundle);
-                //����SlidingMenu����������
+                //设置SlidingMenu拖拽模式
                 mActivity.getSlidingMenu().setTouchModeAbove(SlidingMenu.TOUCHMODE_NONE);
                 break;
             case 4:
@@ -105,7 +115,7 @@ public class MyMenuFragment extends ListFragment implements OnClickListener
                 bundle.putString(WebViewFragment.WEB_ADDRESS, "http://cmbu.cisco.com/");
                 bundle.putString(WebViewFragment.ACTION_BAR_TITLE, getResources().getString(R.string.menu_iqa));
                 newContent.setArguments(bundle);
-                //����SlidingMenu����������
+                //设置SlidingMenu拖拽模式
                 mActivity.getSlidingMenu().setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
                 break;
             case 5:
@@ -114,23 +124,24 @@ public class MyMenuFragment extends ListFragment implements OnClickListener
                 bundle.putString(WebViewFragment.WEB_ADDRESS, "http://www.sina.com.cn");
                 bundle.putString(WebViewFragment.ACTION_BAR_TITLE, getResources().getString(R.string.menu_prt));
                 newContent.setArguments(bundle);
-                //����SlidingMenu����������
+                //设置SlidingMenu拖拽模式
                 mActivity.getSlidingMenu().setTouchModeAbove(SlidingMenu.TOUCHMODE_NONE);
                 break;
             case 6:
+                //设置SlidingMenu拖拽模式
                 newContent = new WebViewFragment();
                 bundle = new Bundle();
-                bundle.putString(WebViewFragment.WEB_ADDRESS, "http://worldcup.2014.163.com");
+                bundle.putString(WebViewFragment.WEB_ADDRESS, "https://apprtc.appspot.com/");
                 bundle.putString(WebViewFragment.ACTION_BAR_TITLE, getResources().getString(R.string.menu_worldcup));
                 newContent.setArguments(bundle);
-                mActivity.getSlidingMenu().setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
+                mActivity.getSlidingMenu().setTouchModeAbove(SlidingMenu.TOUCHMODE_NONE);
                 break;
         }
         if (newContent != null)
             switchFragment(newContent);
     }
 
-    // ����Fragment������ring
+    
     private void switchFragment(Fragment fragment)
     {
         if (getActivity() == null)

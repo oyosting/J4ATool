@@ -8,6 +8,16 @@ import com.jeremyfeinstein.slidingmenu.lib.app.SlidingFragmentActivity;
 import com.umeng.analytics.MobclickAgent;
 import com.umeng.update.UmengUpdateAgent;
 
+/**
+ * 
+  *
+  * @ClassName: MainActivity
+  * @Description: 
+  *
+  * @Author: kevin
+  * @Date: 2014å¹´7æœˆ10æ—¥
+  *
+ */
 public class MainActivity extends SlidingFragmentActivity
 {
 
@@ -42,11 +52,11 @@ public class MainActivity extends SlidingFragmentActivity
     }
 
     /**
-     * ³õÊ¼»¯»¬¶¯²Ëµ¥
+     * åˆå§‹åŒ–æ»‘åŠ¨èœå•
      */
     private void initSlidingMenu(Bundle savedInstanceState)
     {
-        // Èç¹û±£´æµÄ×´Ì¬²»Îª¿ÕÔòµÃµ½WebViewFragment£¬·ñÔòÊµÀı»¯WebViewFragment
+     // å¦‚æœä¿å­˜çš„çŠ¶æ€ä¸ä¸ºç©ºåˆ™å¾—åˆ°WebViewFragmentï¼Œå¦åˆ™å®ä¾‹åŒ–WebViewFragment
         if (savedInstanceState != null)
             mContent = getSupportFragmentManager().getFragment(savedInstanceState, "mContent");
         if (mContent == null)
@@ -59,15 +69,15 @@ public class MainActivity extends SlidingFragmentActivity
             mContent.setArguments(bundle);
         }
 
-        // ÉèÖÃÖ÷ÊÓÍ¼½çÃæ
+        // è®¾ç½®ä¸»è§†å›¾ç•Œé¢
         setContentView(R.layout.content_frame);
         getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, mContent).commit();
 
-        // ÉèÖÃ»¬¶¯²Ëµ¥ÊÓÍ¼½çÃæ
+        // è®¾ç½®æ»‘åŠ¨èœå•è§†å›¾ç•Œé¢
         setBehindContentView(R.layout.menu_frame);
         getSupportFragmentManager().beginTransaction().replace(R.id.menu_frame, new MyMenuFragment()).commit();
 
-        // ÉèÖÃ»¬¶¯²Ëµ¥µÄÊôĞÔÖµ
+        // è®¾ç½®æ»‘åŠ¨èœå•çš„å±æ€§å€¼
         //getSlidingMenu().setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
         getSlidingMenu().setShadowWidthRes(R.dimen.shadow_width);
         getSlidingMenu().setShadowDrawable(R.drawable.shadow);
@@ -77,7 +87,7 @@ public class MainActivity extends SlidingFragmentActivity
     }
 
     /**
-     * ÇĞ»»Fragment£¬Ò²ÊÇÇĞ»»ÊÓÍ¼µÄÄÚÈİ
+     * åˆ‡æ¢Fragmentï¼Œä¹Ÿæ˜¯åˆ‡æ¢è§†å›¾çš„å†…å®¹
      */
     public void switchContent(Fragment fragment)
     {
@@ -87,7 +97,7 @@ public class MainActivity extends SlidingFragmentActivity
     }
 
     /**
-     * ²Ëµ¥°´Å¥µã»÷ÊÂ¼ş£¬Í¨¹ıµã»÷ActionBarµÄHomeÍ¼±ê°´Å¥À´´ò¿ª»¬¶¯²Ëµ¥
+     * èœå•æŒ‰é’®ç‚¹å‡»äº‹ä»¶ï¼Œé€šè¿‡ç‚¹å‡»ActionBarçš„Homeå›¾æ ‡æŒ‰é’®æ¥æ‰“å¼€æ»‘åŠ¨èœå•
      */
     @Override
     public boolean onOptionsItemSelected(MenuItem item)
@@ -102,7 +112,7 @@ public class MainActivity extends SlidingFragmentActivity
     }
 
     /**
-     * ±£´æFragmentµÄ×´Ì¬
+     * ä¿å­˜Fragmentçš„çŠ¶æ€
      */
     @Override
     public void onSaveInstanceState(Bundle outState)

@@ -20,10 +20,11 @@ import android.view.ViewGroup;
 import android.webkit.SslErrorHandler;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.TextView;
 
 /**
  * @author kevin
- * @date 2014Äê7ÔÂ10ÈÕ
+ * @date 2014å¹´7æœˆ10æ—¥
  */
 public class WebViewFragment extends Fragment
 {
@@ -39,6 +40,8 @@ public class WebViewFragment extends Fragment
     private String mActionBarTitle;
 
     private WebView mWebView;
+
+    private TextView mErrorTextView;
 
     @Override
     public void onPause()
@@ -59,6 +62,7 @@ public class WebViewFragment extends Fragment
     {
         View rootView = inflater.inflate(R.layout.fragment_webview, null);
         mWebView = (WebView) rootView.findViewById(R.id.web);
+        mErrorTextView = (TextView)rootView.findViewById(R.id.error_tip);
         initWebView();
         MyWebViewClient webViewClient = new MyWebViewClient();
         mWebView.setWebViewClient(webViewClient);
@@ -125,6 +129,15 @@ public class WebViewFragment extends Fragment
             }
             return result;
         }
+
+        @Override
+        public void onReceivedError(WebView view, int errorCode, String description, String failingUrl)
+        {
+            //cannot load the page, show error tip
+            mWebView.setVisibility(View.GONE);
+            mErrorTextView.setVisibility(View.VISIBLE);
+        }
+        
     }
 
     private void initWebView()

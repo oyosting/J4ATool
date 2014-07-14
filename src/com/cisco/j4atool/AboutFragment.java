@@ -6,6 +6,8 @@
  */
 package com.cisco.j4atool;
 
+import com.umeng.analytics.MobclickAgent;
+
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -14,7 +16,7 @@ import android.view.ViewGroup;
 
 /**
  *@author kevin
- *@date 2014Äê7ÔÂ10ÈÕ
+ *@date 2014å¹´7æœˆ10æ—¥
  */
 public class AboutFragment extends Fragment
 {
@@ -26,4 +28,19 @@ public class AboutFragment extends Fragment
         return rootView;
     }
 
+    @Override
+    public void onPause()
+    {
+        super.onPause();
+        MobclickAgent.onPageEnd(AboutFragment.class.toString());
+    }
+
+    @Override
+    public void onResume()
+    {
+        super.onResume();
+        MobclickAgent.onPageStart(AboutFragment.class.toString());
+    }
+
+    
 }
