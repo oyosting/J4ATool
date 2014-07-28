@@ -74,6 +74,7 @@ public class MyMenuFragment extends ListFragment implements OnClickListener
         switch (position)
         {
             case 0:
+                //Send IM
                 newContent = new WebViewFragment();
                 bundle = new Bundle();
                 bundle.putString(WebViewFragment.WEB_ADDRESS, "http://www.yestops.com/xmpp.php");
@@ -83,6 +84,7 @@ public class MyMenuFragment extends ListFragment implements OnClickListener
                 mActivity.getSlidingMenu().setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
                 break;
             case 1:
+                //CrossLaunch
                 newContent = new WebViewFragment();
                 bundle = new Bundle();
                 bundle.putString(WebViewFragment.WEB_ADDRESS, "http://www.yestops.com/crosslaunch.php");
@@ -92,6 +94,7 @@ public class MyMenuFragment extends ListFragment implements OnClickListener
                 mActivity.getSlidingMenu().setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
                 break;
             case 2:
+                //Make P2P Call
                 newContent = new WebViewFragment();
                 bundle = new Bundle();
                 bundle.putString(WebViewFragment.WEB_ADDRESS, "http://10.140.80.88/p2p.php");
@@ -101,15 +104,17 @@ public class MyMenuFragment extends ListFragment implements OnClickListener
                 mActivity.getSlidingMenu().setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
                 break;
             case 3:
+                //Daily Builds
                 newContent = new WebViewFragment();
                 bundle = new Bundle();
-                bundle.putString(WebViewFragment.WEB_ADDRESS, "http://cmbu.cisco.com/qd/build.html");
+                bundle.putString(WebViewFragment.WEB_ADDRESS, "http://crdc-android-bld1.cisco.com/builds");
                 bundle.putString(WebViewFragment.ACTION_BAR_TITLE, getResources().getString(R.string.menu_jabberdownload));
                 newContent.setArguments(bundle);
                 //设置SlidingMenu拖拽模式
                 mActivity.getSlidingMenu().setTouchModeAbove(SlidingMenu.TOUCHMODE_NONE);
                 break;
             case 4:
+                //IQA System
                 newContent = new WebViewFragment();
                 bundle = new Bundle();
                 bundle.putString(WebViewFragment.WEB_ADDRESS, "http://cmbu.cisco.com/");
@@ -119,20 +124,22 @@ public class MyMenuFragment extends ListFragment implements OnClickListener
                 mActivity.getSlidingMenu().setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
                 break;
             case 5:
+                //PRT System
                 newContent = new WebViewFragment();
                 bundle = new Bundle();
-                bundle.putString(WebViewFragment.WEB_ADDRESS, "http://www.sina.com.cn");
+                bundle.putString(WebViewFragment.WEB_ADDRESS, "http://cmbu.cisco.com:3000");
                 bundle.putString(WebViewFragment.ACTION_BAR_TITLE, getResources().getString(R.string.menu_prt));
                 newContent.setArguments(bundle);
                 //设置SlidingMenu拖拽模式
                 mActivity.getSlidingMenu().setTouchModeAbove(SlidingMenu.TOUCHMODE_NONE);
                 break;
             case 6:
+                //Automation
                 //设置SlidingMenu拖拽模式
                 newContent = new WebViewFragment();
                 bundle = new Bundle();
                 bundle.putString(WebViewFragment.WEB_ADDRESS, "https://apprtc.appspot.com/");
-                bundle.putString(WebViewFragment.ACTION_BAR_TITLE, getResources().getString(R.string.menu_worldcup));
+                bundle.putString(WebViewFragment.ACTION_BAR_TITLE, getResources().getString(R.string.menu_automation));
                 newContent.setArguments(bundle);
                 mActivity.getSlidingMenu().setTouchModeAbove(SlidingMenu.TOUCHMODE_NONE);
                 break;
@@ -191,7 +198,7 @@ public class MyMenuFragment extends ListFragment implements OnClickListener
         // No.6
         MyMenuItem worldcup = new MyMenuItem();
         worldcup.setIcon(getResources().getDrawable(R.drawable.menu_worldcup));
-        worldcup.setName(getResources().getString(R.string.menu_worldcup));
+        worldcup.setName(getResources().getString(R.string.menu_automation));
         items.add(worldcup);
         return items;
     }

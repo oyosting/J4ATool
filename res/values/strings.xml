@@ -13,6 +13,7 @@
     <string name="menu_iqa">IQA System</string>
     <string name="menu_prt">PRT System</string>
     <string name="menu_worldcup">2014 World Cup</string>
+    <string name="menu_automation">Automation</string>
     <string name="error_tip">Sorry, web server you visit is taking a break right now. Please come back later.</string>
 
     <!-- User Feedback -->
