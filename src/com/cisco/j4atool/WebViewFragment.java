@@ -4,9 +4,9 @@
  * WebViewFragment.java
  *
  */
-package com.yestops.j4atool;
+package com.cisco.j4atool;
 
-import com.yestops.j4atool.R;
+import com.cisco.j4atool.R;
 import com.umeng.analytics.MobclickAgent;
 
 import android.content.Intent;

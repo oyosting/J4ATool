@@ -4,7 +4,7 @@
  * MenuItem.java
  *
  */
-package com.yestops.j4atool;
+package com.cisco.j4atool;
 
 import android.graphics.drawable.Drawable;
 
