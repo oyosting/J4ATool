@@ -1,8 +1,9 @@
-package com.cisco.j4atool;
+package com.yestops.j4atool;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import com.yestops.j4atool.R;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.umeng.analytics.MobclickAgent;
 
@@ -81,7 +82,7 @@ public class MyMenuFragment extends ListFragment implements OnClickListener
                 bundle.putString(WebViewFragment.ACTION_BAR_TITLE, getResources().getString(R.string.menu_sendim));
                 newContent.setArguments(bundle);
                 //设置SlidingMenu拖拽模式
-                mActivity.getSlidingMenu().setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
+                mActivity.getSlidingMenu().setTouchModeAbove(SlidingMenu.TOUCHMODE_NONE);
                 break;
             case 1:
                 //CrossLaunch
@@ -91,9 +92,9 @@ public class MyMenuFragment extends ListFragment implements OnClickListener
                 bundle.putString(WebViewFragment.ACTION_BAR_TITLE, getResources().getString(R.string.menu_crosslaunch));
                 newContent.setArguments(bundle);
                 //设置SlidingMenu拖拽模式
-                mActivity.getSlidingMenu().setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
+                mActivity.getSlidingMenu().setTouchModeAbove(SlidingMenu.TOUCHMODE_NONE);
                 break;
-            case 2:
+/*            case 2:
                 //Make P2P Call
                 newContent = new WebViewFragment();
                 bundle = new Bundle();
@@ -101,29 +102,29 @@ public class MyMenuFragment extends ListFragment implements OnClickListener
                 bundle.putString(WebViewFragment.ACTION_BAR_TITLE, getResources().getString(R.string.menu_p2p));
                 newContent.setArguments(bundle);
                 //设置SlidingMenu拖拽模式
-                mActivity.getSlidingMenu().setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
-                break;
-            case 3:
+                mActivity.getSlidingMenu().setTouchModeAbove(SlidingMenu.TOUCHMODE_NONE);
+                break;*/
+            case 2:
                 //Daily Builds
                 newContent = new WebViewFragment();
                 bundle = new Bundle();
-                bundle.putString(WebViewFragment.WEB_ADDRESS, "http://crdc-android-bld1.cisco.com/builds");
+                bundle.putString(WebViewFragment.WEB_ADDRESS, "https://play.google.com/store/apps/details?id=com.cisco.im");
                 bundle.putString(WebViewFragment.ACTION_BAR_TITLE, getResources().getString(R.string.menu_jabberdownload));
                 newContent.setArguments(bundle);
                 //设置SlidingMenu拖拽模式
                 mActivity.getSlidingMenu().setTouchModeAbove(SlidingMenu.TOUCHMODE_NONE);
                 break;
-            case 4:
+            case 3:
                 //IQA System
                 newContent = new WebViewFragment();
                 bundle = new Bundle();
-                bundle.putString(WebViewFragment.WEB_ADDRESS, "http://cmbu.cisco.com/");
+                bundle.putString(WebViewFragment.WEB_ADDRESS, "http://www.cisco.com/go/android/ciscojabber/videos/10_5");
                 bundle.putString(WebViewFragment.ACTION_BAR_TITLE, getResources().getString(R.string.menu_iqa));
                 newContent.setArguments(bundle);
                 //设置SlidingMenu拖拽模式
-                mActivity.getSlidingMenu().setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
+                mActivity.getSlidingMenu().setTouchModeAbove(SlidingMenu.TOUCHMODE_NONE);
                 break;
-            case 5:
+/*            case 5:
                 //PRT System
                 newContent = new WebViewFragment();
                 bundle = new Bundle();
@@ -142,7 +143,7 @@ public class MyMenuFragment extends ListFragment implements OnClickListener
                 bundle.putString(WebViewFragment.ACTION_BAR_TITLE, getResources().getString(R.string.menu_automation));
                 newContent.setArguments(bundle);
                 mActivity.getSlidingMenu().setTouchModeAbove(SlidingMenu.TOUCHMODE_NONE);
-                break;
+                break;*/
         }
         if (newContent != null)
             switchFragment(newContent);
@@ -176,10 +177,10 @@ public class MyMenuFragment extends ListFragment implements OnClickListener
         crossLaunch.setName(getResources().getString(R.string.menu_crosslaunch));
         items.add(crossLaunch);
         // No.2
-        MyMenuItem p2pCall = new MyMenuItem();
+/*        MyMenuItem p2pCall = new MyMenuItem();
         p2pCall.setIcon(getResources().getDrawable(R.drawable.menu_p2p));
         p2pCall.setName(getResources().getString(R.string.menu_p2p));
-        items.add(p2pCall);
+        items.add(p2pCall);*/
         // No.3
         MyMenuItem jabberDownload = new MyMenuItem();
         jabberDownload.setIcon(getResources().getDrawable(R.drawable.menu_jabberdownload));
@@ -191,7 +192,7 @@ public class MyMenuFragment extends ListFragment implements OnClickListener
         iqa.setName(getResources().getString(R.string.menu_iqa));
         items.add(iqa);
         // No.5
-        MyMenuItem prt = new MyMenuItem();
+/*        MyMenuItem prt = new MyMenuItem();
         prt.setIcon(getResources().getDrawable(R.drawable.menu_prt));
         prt.setName(getResources().getString(R.string.menu_prt));
         items.add(prt);
@@ -199,7 +200,7 @@ public class MyMenuFragment extends ListFragment implements OnClickListener
         MyMenuItem worldcup = new MyMenuItem();
         worldcup.setIcon(getResources().getDrawable(R.drawable.menu_worldcup));
         worldcup.setName(getResources().getString(R.string.menu_automation));
-        items.add(worldcup);
+        items.add(worldcup);*/
         return items;
     }
 
@@ -223,12 +224,12 @@ public class MyMenuFragment extends ListFragment implements OnClickListener
             case R.id.button_about:
                 Fragment aboutFragment = new AboutFragment();
                 switchFragment(aboutFragment);
-                Log.d("Cisco", "Switch to AboutFragment");
+                Log.d("YesTops", "Switch to AboutFragment");
                 break;
             case R.id.button_feedback:
                 Intent emailIntent = new Intent(Intent.ACTION_SEND);
                 emailIntent.setType("message/rfc822");
-                emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{"jabber-android-tiger@cisco.com"});
+                emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{"Admin@YesTops.com"});
                 emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Feedback For J4ATool");
                 emailIntent.putExtra(Intent.EXTRA_TEXT, "Enter your feedback below:\n");
                 emailIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

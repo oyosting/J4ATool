@@ -1,9 +1,10 @@
-package com.cisco.j4atool;
+package com.yestops.j4atool;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.MenuItem;
 
+import com.yestops.j4atool.R;
 import com.jeremyfeinstein.slidingmenu.lib.app.SlidingFragmentActivity;
 import com.umeng.analytics.MobclickAgent;
 import com.umeng.update.UmengUpdateAgent;
