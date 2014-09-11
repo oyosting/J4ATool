@@ -77,7 +77,7 @@ public class MyMenuFragment extends ListFragment implements OnClickListener
                 //Send IM
                 newContent = new WebViewFragment();
                 bundle = new Bundle();
-                bundle.putString(WebViewFragment.WEB_ADDRESS, "http://www.yestops.com/xmpp.php");
+                bundle.putString(WebViewFragment.WEB_ADDRESS, "https://www.yestops.com/xmpp.php");
                 bundle.putString(WebViewFragment.ACTION_BAR_TITLE, getResources().getString(R.string.menu_sendim));
                 newContent.setArguments(bundle);
                 //设置SlidingMenu拖拽模式
@@ -87,7 +87,7 @@ public class MyMenuFragment extends ListFragment implements OnClickListener
                 //CrossLaunch
                 newContent = new WebViewFragment();
                 bundle = new Bundle();
-                bundle.putString(WebViewFragment.WEB_ADDRESS, "http://www.yestops.com/crosslaunch.php");
+                bundle.putString(WebViewFragment.WEB_ADDRESS, "https://www.yestops.com/crosslaunch.php");
                 bundle.putString(WebViewFragment.ACTION_BAR_TITLE, getResources().getString(R.string.menu_crosslaunch));
                 newContent.setArguments(bundle);
                 //设置SlidingMenu拖拽模式
@@ -127,7 +127,7 @@ public class MyMenuFragment extends ListFragment implements OnClickListener
                 //PRT System
                 newContent = new WebViewFragment();
                 bundle = new Bundle();
-                bundle.putString(WebViewFragment.WEB_ADDRESS, "http://cmbu.cisco.com:3000");
+                bundle.putString(WebViewFragment.WEB_ADDRESS, "http://cmbu.cisco.com/qd/prt.php");
                 bundle.putString(WebViewFragment.ACTION_BAR_TITLE, getResources().getString(R.string.menu_prt));
                 newContent.setArguments(bundle);
                 //设置SlidingMenu拖拽模式

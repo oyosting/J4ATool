@@ -64,7 +64,7 @@ public class MainActivity extends SlidingFragmentActivity
             Bundle bundle = new Bundle();
             mContent = new WebViewFragment();
             bundle = new Bundle();
-            bundle.putString(WebViewFragment.WEB_ADDRESS, "http://www.yestops.com/xmpp.php");
+            bundle.putString(WebViewFragment.WEB_ADDRESS, "https://www.yestops.com/xmpp.php");
             bundle.putString(WebViewFragment.ACTION_BAR_TITLE, getResources().getString(R.string.menu_sendim));
             mContent.setArguments(bundle);
         }
