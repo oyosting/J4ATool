@@ -1,9 +1,9 @@
-package com.yestops.j4atool;
+package com.cisco.j4atool;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.yestops.j4atool.R;
+import com.cisco.j4atool.R;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.umeng.analytics.MobclickAgent;
 
