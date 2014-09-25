@@ -34,7 +34,7 @@ public class WebViewFragment extends Fragment
     public static final String ACTION_BAR_TITLE = "action_bar_title";
 
     private final String[] mSchemes =
-    { "im://", "xmpp://", "ciscoim://", "ciscotel://", "tel://", "ciscojabber://" };
+    { "im://", "xmpp://", "ciscoim://", "ciscotel://", "tel://", "ciscojabber://", "sip://"};
 
     private String mWebUrl;
 

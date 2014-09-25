@@ -88,7 +88,7 @@ public class MyMenuFragment extends ListFragment implements OnClickListener
                 //CrossLaunch
                 newContent = new WebViewFragment();
                 bundle = new Bundle();
-                bundle.putString(WebViewFragment.WEB_ADDRESS, "https://www.yestops.com/crosslaunch.php");
+                bundle.putString(WebViewFragment.WEB_ADDRESS, "https://blog.yestops.com/?p=40");
                 bundle.putString(WebViewFragment.ACTION_BAR_TITLE, getResources().getString(R.string.menu_crosslaunch));
                 newContent.setArguments(bundle);
                 //设置SlidingMenu拖拽模式
